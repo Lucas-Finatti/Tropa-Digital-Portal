@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const Login: React.FC = () => {
-  const { setIsAuthenticated, isAuthenticated } = useAuth(); // Use o useAuth para obter login e isAuthenticated
+  const { setIsAuthenticated, isAuthenticated } = useAuth();
   const [email, setEmail] = useState('');
   const [loginFailed, setLoginFailed] = useState(false);
   const [password, setPassword] = useState('');

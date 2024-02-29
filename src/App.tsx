@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './views/login/login';
 import Home from './views/home/home';
-import AuthProvider from './auth/authContext'; // Importe o AuthProvider
+import AuthProvider from './auth/authContext';
 import { createGlobalStyle } from 'styled-components';
 import infoImg from './assets/infoBox.png';
 

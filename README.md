@@ -1,46 +1,87 @@
-# Getting Started with Create React App
+# Tropa-Digital-Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Projeto Desenvolvido em React
 
-## Available Scripts
+Este é o repositório do projeto Tropa-Digital-Portal, um sistema desenvolvido em React para gestão de conteúdo digital.
 
-In the project directory, you can run:
+## Dependências
 
-### `npm start`
+O projeto utiliza as seguintes dependências:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- "@testing-library/jest-dom": "^5.17.0"
+- "@testing-library/react": "^13.4.0"
+- "@testing-library/user-event": "^13.5.0"
+- "@types/jest": "^27.5.2"
+- "@types/node": "^16.18.83"
+- "@types/react": "^18.2.60"
+- "@types/react-dom": "^18.2.19"
+- "react": "^18.2.0"
+- "react-router-dom": "^6.22.1"
+- "react-scripts": "5.0.1"
+- "styled-components": "^6.1.8"
+- "typescript": "^5.3.3"
+- "web-vitals": "^2.1.4"
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Scripts
 
-### `npm test`
+- **start**: Inicia o servidor de desenvolvimento com `react-scripts start`
+- **build**: Gera a build de produção com `react-scripts build`
+- **test**: Executa testes com `react-scripts test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tela de Login
 
-### `npm run build`
+A aplicação conta com uma tela de login acessível através do seguinte endereço: [http://localhost:3000/login](http://localhost:3000/login). As credenciais padrão para acesso são:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **E-mail:** teste@email.com
+- **Senha:** senha123
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Middleware de Autenticação
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+O projeto possui um middleware de autenticação que verifica se o usuário está logado antes de permitir o acesso à página principal (home). O código responsável por isso está localizado em um componente chamado `AuthMiddleware`, que utiliza o `useAuth` para obter informações sobre a autenticação.
 
-### `npm run eject`
+```javascript
+const { isAuthenticated } = useAuth();
+const [activeButton, setActiveButton] = useState<keyof ButtonStates>('inicio');
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+if (!isAuthenticated) {
+  return <Navigate to="/login" />;
+}
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contexto de Autenticação
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+O contexto de autenticação é gerenciado pelo componente `AuthProvider`. Ele utiliza o `createContext` do React para prover informações sobre autenticação para toda a aplicação. O hook `useAuth` é disponibilizado para facilitar o acesso a essas informações em componentes específicos.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```javascript
+const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
-## Learn More
+const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  const login = () => {
+    setIsAuthenticated(true);
+  };
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  return (
+    <AuthContext.Provider value={{ isAuthenticated, login, setIsAuthenticated }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth deve ser utilizado dentro de um AuthProvider');
+  }
+  return context;
+};
+
+export default AuthProvider;
+```
+## Como Utilizar
+
+1. Clone o repositório: `git clone https://github.com/seu-usuario/Tropa-Digital-Portal.git`
+2. Instale as dependências: `npm install`
+3. Inicie a aplicação: `npm start`
+
+Divirta-se explorando e desenvolvendo no Tropa-Digital-Portal!

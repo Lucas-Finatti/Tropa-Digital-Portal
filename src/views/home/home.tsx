@@ -22,7 +22,6 @@ const Home: React.FC = () => {
         <Sidebar onButtonClick={(buttonName) => setActiveButton(buttonName)} />
       </div>
       <div>
-        {/* Renderize o componente correspondente ao botão ativo */}
         {activeButton === 'inicio' && <Inicio />}
         {activeButton === 'relatorio1' && <Relatorios />}
         {activeButton === 'contacto1' && <Contatos />}

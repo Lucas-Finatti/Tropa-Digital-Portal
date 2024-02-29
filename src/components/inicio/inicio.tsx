@@ -4,8 +4,6 @@ import './inicio.css'
 
 const Inicio = () => {
 
-
-
   return (
     <div className='header'>
       <div className='inicio-container'>
