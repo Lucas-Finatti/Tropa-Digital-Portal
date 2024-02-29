@@ -23,6 +23,7 @@ const useSidebarStyles = (props: UseSidebarStylesProps): { handleButtonClick: (b
     const [buttonStates, setButtonStates] = useState<ButtonStates>({
         inicio: true,
         relatorio1: false,
+        contacto: false,
         contacto1: false,
         contacto2: false,
         contacto3: false,
@@ -33,6 +34,7 @@ const useSidebarStyles = (props: UseSidebarStylesProps): { handleButtonClick: (b
             const newState: ButtonStates = {
                 inicio: false,
                 relatorio1: false,
+                contacto: false,
                 contacto1: false,
                 contacto2: false,
                 contacto3: false,
@@ -71,6 +73,7 @@ const useSidebarStyles = (props: UseSidebarStylesProps): { handleButtonClick: (b
                 return isActive ? inicioActiveIcon : inicioIcon;
             case 'relatorio1':
                 return isActive ? relatorioActiveIcon : relatorioIcon;
+            case 'contacto':
             case 'contacto1':
             case 'contacto2':
             case 'contacto3':
@@ -106,8 +109,9 @@ const useSidebarStyles = (props: UseSidebarStylesProps): { handleButtonClick: (b
 
     const iconStyle: React.CSSProperties = {
         color: 'white',
-        width: '1.09vw',
-        height:'1.94vh',
+        width: 'auto',
+        maxWidth: '1.09vw',
+        maxHeight:'1.94vh',
         marginRight: '6px',
     };
 

@@ -23,6 +23,7 @@ const Home: React.FC = () => {
       </div>
       <div>
         {activeButton === 'inicio' && <Inicio />}
+        {activeButton === 'contacto' && <Contatos />}
         {activeButton === 'relatorio1' && <Relatorios />}
         {activeButton === 'contacto1' && <Contatos />}
         {activeButton === 'contacto2' && <Contatos />}

@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap');
+
+.sidebar-button {
+    font-family: 'Advent Pro', sans-serif !important;
+    font-size: 14px;
+    font-weight: 600;
+}
