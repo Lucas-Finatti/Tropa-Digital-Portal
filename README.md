@@ -46,6 +46,8 @@ const [activeButton, setActiveButton] = useState<keyof ButtonStates>('inicio');
 if (!isAuthenticated) {
   return <Navigate to="/login" />;
 }
+```
+
 
 ## Contexto de Autenticação
 
