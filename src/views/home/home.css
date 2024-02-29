@@ -1,0 +1,7 @@
+.home {
+  background-color: #F3F3F3;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 13.54vw auto;
+}
+

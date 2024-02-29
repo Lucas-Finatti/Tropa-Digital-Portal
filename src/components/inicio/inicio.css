@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap');
+
+.inicio-title {
+    width: 100%;
+    margin: 0;
+    font-size: 25px;
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: 400;
+    color: #00000070;
+}
+
+.inicio-span {
+    font-weight: 600;
+    color: #00000070;
+}
+
+.inicio-container {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.header {
+    padding: 3%;
+    box-sizing: border-box;
+}
+
+.inicio-content {
+    box-sizing: border-box; 
+    display: grid;
+    gap: 1.8%;
+    margin-top: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid #0000001A;
+}

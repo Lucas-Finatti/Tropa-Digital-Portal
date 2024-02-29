@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Lato:wght@300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #FF6C22;
+}
+
+.login-container {
+  height: 47.41vh;
+  width: 44.64vw;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: white;
+  min-height: 340px;
+  min-width: 550px;
+  box-shadow: 0px 4px 19px 0px #00000040;
+  border-radius: 4px; 
+}
+  
+.logo-container {
+  display: flex;
+  border-radius: 4px; 
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.left {
+  border-radius: 4px; 
+  position: relative;
+  height: 100%;
+  width: 55%;
+  box-sizing: border-box;
+  background-color: white;
+  padding: 7%;
+}
+
+.right {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  min-height: 340px;
+  min-width: 145px;
+  width: 24.11vw;
+}
+
+.logo {
+  width: 13.49vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  margin-bottom: 15%;
+}
+
+.side-img {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  display: flex;
+  min-width: 215px;
+}
+
+p {
+  margin-bottom: 10%;
+}
+
+.span {
+  font-weight: 700;
+  color: #888888;
+  font-size: 29px !important;
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+  font-size: 1.2em;
+}
+
+.span1 {
+  font-weight: 700;
+  color: #888888; 
+  font-size: 25px !important;
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+  font-size: 1.2em;
+}
+
+.span2 {
+  font-weight: 700;
+  color: #FF6C22;
+  font-size: 29px;
+}
+
+.button-login {
+  height: 3.70vh;
+  width: 7.86vw;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: #2EAFB2;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 3px;
+  font-family: 'Roboto';
+}
+
+.button-login:hover {
+  background-color: #27999b;
+}
+
